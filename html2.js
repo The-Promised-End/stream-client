@@ -21,10 +21,9 @@ function getAndPrintHTML () {
     response.on('end', function() {
 
       console.log(responseBodyString);
-
     });
 
-  });
+
 };
 
 getAndPrintHTML();
