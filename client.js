@@ -15,7 +15,7 @@ function getAndPrintHTMLChunks () {
 
     response.on("data", function (chunk) {
 
-      console.log("chunk");
+      console.log(response);
 
       responseBodyString += chunk;
     });
