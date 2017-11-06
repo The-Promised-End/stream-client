@@ -3,13 +3,11 @@ const https = require('https');
 function getHTML (host, path, callback) {
 
   const requestOptions = {
-    host: host
+    host: host,
     path: path
   };
 
-function printHTML(html) {
-  console.log(html)
-}
+
 
   https.get(requestOptions, function (response) {
 
@@ -23,12 +21,14 @@ function printHTML(html) {
     });
 
     response.on('end', function() {
+   callback(responseBodyString);
 
-      console.log(responseBodyString);
 
     });
 
   });
 };
-
-getAndPrintHTML();
+function printHTML(html) {
+  console.log(html)
+}
+getHTML('sytantris.github.io', '/http-examples/step4.html', printHTML);
