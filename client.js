@@ -15,10 +15,13 @@ function getAndPrintHTMLChunks () {
 
     response.on("data", function (chunk) {
 
-      console.log(response);
 
       responseBodyString += chunk;
     });
+
+    response.on('end', function() {
+      console.log(responseBodyString);
+    })
   })
 
 };
